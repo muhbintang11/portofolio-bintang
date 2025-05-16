@@ -1,0 +1,381 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-image: url('../image/backgrounds.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid white;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.profile-section {
+    background: transparent (255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 8rem;
+}
+
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.profile-header {
+    flex: 1;
+}
+
+.profile-header h1 {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border: 2px solid white;
+    border-radius: 50px;
+    margin-bottom: 3rem;
+}
+
+.profile-header p {
+    margin: 0;
+    text-align: justify;
+    line-height: 1.3;
+    margin-top: -30px;
+}
+
+.main-profile img {
+    width: 380px;
+    height: auto;
+    object-fit: cover;
+    margin-top: -50px;
+    border-radius: 0;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.hobi-section, .skill-section {
+    margin-bottom: 3rem;
+}
+
+.hobi-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.hobi-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.hobi-gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.equipment {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.camera, .phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.camera img, .phone img {
+    width: 30px;
+    height: 30px;
+}
+
+.skill-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.skill-item {
+    text-align: center;
+    width: 120px;
+}
+
+.skill-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.percentage {
+    display: block;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(102, 62, 62, 0.1);
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code p {
+    margin-bottom: 80x;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    font-weight: 600;
+}
+
+.qr-code img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-media {
+    text-align: right;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .profile-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hobi-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hobi-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skill-icons {
+        gap: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .social-media {
+        text-align: center;
+    }
+}
+
+.hobi-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+.hobi-text p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.hobi-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* jarak antar alat */
+}
+
+.tool {
+  display: flex;
+  align-items: flex-start;
+  gap: 70px; /* jarak antara gambar dan teks */
+}
+
+.hobi-tools .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  object-fit: contain;
+}
+
+.tool-info {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.note {
+  margin-top: 6px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hobi-section {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+}
+
+.hobi-section img {
+  position: absolute;
+  width: 120px;
+  height: auto;
+  border: 4px solid white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Posisi khusus untuk setiap gambar */
+.img1 { top: 0px; left: 50px; transform: rotate(-10deg); }
+.img2 { top: 80px; left: 170px; transform: rotate(5deg); }
+.img3 { top: 40px; left: 290px; transform: rotate(-5deg); }
+.img4 { top: 100px; left: 410px; transform: rotate(10deg); }
+.img5 { top: 20px; left: 530px; transform: rotate(-7deg); }
+
+.gallery img:hover {
+  transform: scale(1.1) rotate(0deg);
+  z-index: 10;
+}

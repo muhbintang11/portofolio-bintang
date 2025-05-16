@@ -1,0 +1,376 @@
+/* Reset dan style dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-image: url('../image/backgrounds.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: bold;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid white;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 120px 10% 50px;
+    position: relative;
+    min-height: 100vh;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 0 30px rgba(212, 208, 208, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    margin-left: 50px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.hero-content h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.hero-content p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    display: inline-block; /* Supaya garis bawah hanya selebar teks */
+    border-bottom: 3px solid white; /* Garis bawah tebal 3px berwarna putih */
+    padding-bottom: 5px; /* Jarak antara teks dan garis */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 7px;
+}
+
+.social-links a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2);
+}
+
+/* Welcome Text */
+.welcome-text {
+    text-align: center;
+    padding: 50px 10%;
+    line-height: 1.6;
+}
+
+.welcome-text p {
+    margin-bottom: 80x;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    font-weight: 600;
+}
+
+/* Space Elements */
+.space-elements {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.planet {
+    position: absolute;
+    width: 100px;  /* ukuran disesuaikan */
+    height: 100px;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Posisi planet di kanan atas */
+.right-top {
+    top: 150px;
+    right: 130px;
+}
+
+/* Posisi planet di kiri bawah */
+.left-bottom {
+    bottom: 40px;
+    left: 60px;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Bagian kiri (QR) */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qr-code {
+  width: 100px;
+  height: 100px;
+  border: 3px solid white;
+  border-radius: 8px;
+}
+
+.qr-text {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.arrow {
+  position: absolute;
+  left: 90px;
+  top: 40px;
+  font-size: 32px;
+  color: white;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 150px 5% 50px;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .qr-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .social-media {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        display: none;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2em;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
