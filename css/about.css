@@ -158,116 +158,6 @@ main {
   }
 }
 
-
-.hobi-section, .skill-section {
-    margin-bottom: 3rem;
-}
-
-.hobi-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 1rem;
-}
-
-.hobi-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-.hobi-gallery img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.equipment {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.camera, .phone {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.camera img, .phone img {
-    width: 30px;
-    height: 30px;
-}
-
-.skill-icons {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    gap: 2rem;
-}
-
-.skill-item {
-    text-align: center;
-    width: 120px;
-}
-
-.skill-item img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 0.5rem;
-}
-
-.percentage {
-    display: block;
-    color: #4CAF50;
-    font-weight: bold;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(102, 62, 62, 0.1);
-}
-
-.qr-code {
-    text-align: center;
-}
-
-.qr-code p {
-    margin-bottom: 80x;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    font-weight: 600;
-}
-
-.qr-code img {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.social-media {
-    text-align: right;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-.social-icons img {
-    width: 40px;
-    height: 40px;
-}
-
 @media (max-width: 768px) {
     .profile-images {
         flex-direction: column;
@@ -297,11 +187,19 @@ main {
     }
 }
 
+.hobi-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
 .hobi-text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: bold;
   margin-left: 40px;
+  margin-top: -50px;
 }
 
 .hobi-text p {
@@ -315,51 +213,84 @@ main {
 .hobi-tools {
   display: flex;
   flex-direction: column;
-  gap: 4px; /* jarak antar alat */
+  gap: 4px; 
 }
 
 .tool {
   display: flex;
   align-items: flex-start;
-  gap: 70px; /* jarak antara gambar dan teks */
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-.hobi-tools .icon {
+.icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: white;
   object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tool-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+}
+
+.tool-info .title {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  min-width: 160px;
 }
 
 .tool-info {
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', sans-serif;
   color: white;
 }
 
+.tool-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* jarak antara teks dan kotak */
+  flex-wrap: wrap; /* biar responsif */
+}
+
 .note {
-  margin-top: 6px;
-  padding: 10px 16px;
-  border-radius: 12px;
+  border: 1px solid white;
+  padding: 6px 10px;
+  border-radius: 10px;
   font-weight: bold;
-  border: 2px solid white;
+  font-size: 13px;
   background-color: transparent;
   color: white;
-  font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.3;
+  max-width: 240px;
 }
 
 .hobi-section {
   position: relative;
   width: 100%;
   height: 400px;
-  margin-top: 50px;
+  margin-top: -16px;
 }
 
-.hobi-section img {
+.popup-toggle {
+  display: none;
+}
+
+.img-label {
   position: absolute;
+  cursor: pointer;
+}
+
+.img-label img {
   width: 120px;
   height: auto;
   border: 4px solid white;
@@ -368,14 +299,271 @@ main {
   transition: transform 0.3s ease;
 }
 
-/* Posisi khusus untuk setiap gambar */
+.img-label img:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .img1 { top: 0px; left: 50px; transform: rotate(-10deg); }
 .img2 { top: 80px; left: 170px; transform: rotate(5deg); }
 .img3 { top: 40px; left: 290px; transform: rotate(-5deg); }
 .img4 { top: 100px; left: 410px; transform: rotate(10deg); }
 .img5 { top: 20px; left: 530px; transform: rotate(-7deg); }
 
-.gallery img:hover {
-  transform: scale(1.1) rotate(0deg);
-  z-index: 10;
+/* Overlay untuk pop-up */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.popup-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 20px;
+  animation: zoomIn 0.4s ease;
+}
+
+/* Tampilkan overlay saat checkbox aktif */
+.popup-toggle:checked + .img-label + .popup-overlay {
+  display: flex;
+}
+
+/* Animasi muncul */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.skill-section {
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+  margin-top: -90px;
+}
+
+.skill-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.skill-description {
+  font-size: 14px;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.skill-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* penting! */
+}
+
+.skill-item img:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item span {
+  font-weight: bold;
+  margin-top: 6px;
+  color: white;
+}
+
+.percentage {
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+.skill-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+/* Bagian kiri (QR) */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qr-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qr-code {
+  width: 100px;
+  height: 100px;
+  border: 3px solid white;
+  border-radius: 8px;
+}
+
+.qr-text {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.arrow {
+  position: absolute;
+  left: 90px;
+  top: 40px;
+  font-size: 32px;
+  color: white;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 150px 5% 50px;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .qr-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .social-media {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        display: none;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2em;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
